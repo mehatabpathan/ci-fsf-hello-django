@@ -27,7 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-mehatabpathan-ci-fsf-hel-z1b7pjcl8v.us2.codeanyapp.com']
 
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://8000-mehatabpathan-ci-fsf-hel-z1b7pjcl8v.us2.codeanyapp.com"
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todo'
+    'todo',
 ]
 
 MIDDLEWARE = [
