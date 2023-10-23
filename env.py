@@ -1,0 +1,1 @@
+DATABASE_URL:postgres://asfanmbn:CZaVKCBAvzvUXV__FCiZK3c6EWs76ao_@flora.db.elephantsql.com/asfanmbn
