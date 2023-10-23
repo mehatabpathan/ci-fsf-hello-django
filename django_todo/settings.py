@@ -14,7 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
-    import env
+import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +24,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-7k)oyewp5f)*_*==m-d@ln)dwv@rc&*xb*g!&g%wd()n@#h+mi'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY', 'django-insecure-7k)oyewp5f)*_*==m-d@ln)dwv@rc&*xb*g!&g%wd()n@#h+mi')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-mehatabpathan-ci-fsf-hel-z1b7pjcl8v.us2.codeanyapp.com']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-mehatabpathan-ci-fsf-hel-z1b7pjcl8v.us2.codeanyapp.com"
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-       
+
 }
 
 
